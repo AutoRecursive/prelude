@@ -166,9 +166,21 @@ This is DEPRECATED, use %s instead." prelude-modules-file))
  (run-at-time 5 nil 'prelude-tip-of-the-day))
 
 ;; my config
+(setq package-selected-packages
+      '(gradle-mode
+        js2-mode
+        neotree
+        racket-mode
+        cider))
+(package-install-selected-packages)
+
 (global-linum-mode 1)
 (electric-pair-mode t)
+(setq-default tab-width 4)
+(require 'gradle-mode)
+(gradle-mode 1)
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
 ;; my config ends
 
 ;;; init.el ends here
-
