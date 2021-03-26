@@ -171,7 +171,9 @@ This is DEPRECATED, use %s instead." prelude-modules-file))
         js2-mode
         neotree
         racket-mode
-        cider))
+        cider
+        geiser
+        hightlight-parentheses))
 (package-install-selected-packages)
 
 (global-linum-mode 1)
@@ -181,6 +183,21 @@ This is DEPRECATED, use %s instead." prelude-modules-file))
 (gradle-mode 1)
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+
+(setq geiser-active-implementations '(chez))
+
+(add-hook 'emacs-lisp-mode-hook
+          '(lambda ()
+             (highlight-parentheses-mode)
+             (setq autopair-handle-action-fns
+                   (list 'autopair-default-handle-action
+                         '(lambda (action pair pos-before)
+                            (hl-paren-color-update))))))
+
+(show-paren-mode 1)
+
+
+
 ;; my config ends
 
 ;;; init.el ends here
