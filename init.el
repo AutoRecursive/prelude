@@ -173,7 +173,9 @@ This is DEPRECATED, use %s instead." prelude-modules-file))
         racket-mode
         cider
         geiser
-        hightlight-parentheses))
+        hightlight-parentheses
+        haskell-mode
+        neotree))
 (package-install-selected-packages)
 
 (global-linum-mode 1)
@@ -195,7 +197,6 @@ This is DEPRECATED, use %s instead." prelude-modules-file))
                             (hl-paren-color-update))))))
 
 (show-paren-mode 1)
-
 
 
 ;; my config ends
