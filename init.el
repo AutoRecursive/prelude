@@ -172,7 +172,8 @@ by Prelude.")
         geiser
         hightlight-parentheses
         haskell-mode
-        neotree))
+        neotree
+        slime))
 (package-install-selected-packages)
 
 (global-linum-mode 1)
@@ -194,6 +195,7 @@ by Prelude.")
                             (hl-paren-color-update))))))
 
 (show-paren-mode 1)
+(setq inferior-lisp-program "sbcl")
 
 
 ;; my config ends
